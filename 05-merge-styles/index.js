@@ -9,7 +9,7 @@ const sourceFolder = path.join(__dirname,'styles');
 
         const stream = new fs.ReadStream(path.join(sourceFolder + '/' + files[i]['name']), 'utf8'); //чтение файлов css
         stream.on('data', function(data){
-          const streamWr = new fs.appendFile((path.join(__dirname, 'bundle.css')), data, (err) => {//запись
+          const streamWr = new fs.appendFile((path.join(__dirname, 'project-dist', 'bundle.css')), data, (err) => {//запись
             if (err) throw err;
           }) 
         })
